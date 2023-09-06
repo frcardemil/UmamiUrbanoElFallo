@@ -10,13 +10,13 @@ import type { Animation } from '@ionic/angular';
 })
 export class HomePage {
 
-  data:any;
+  user:any;
   private animation!: Animation;
   constructor(private activateRoute: ActivatedRoute, private router: Router, private animationController:AnimationController) {
     this.activateRoute.queryParams.subscribe(params =>{
       if(this.router.getCurrentNavigation()?.extras.state) {
-        this.data=this.router.getCurrentNavigation()?.extras.state?.["user"];
-        console.log(this.data)
+        this.user=this.router.getCurrentNavigation()?.extras.state?.["user"];
+        console.log(this.user)
       }else{
         this.router.navigate(["/login"]);
       }
