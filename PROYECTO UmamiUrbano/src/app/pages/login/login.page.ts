@@ -27,4 +27,8 @@ export class LoginPage implements OnInit {
     }
     this.router.navigate(["/home"], navigationextras);
   }
+
+  registro(){
+    this.router.navigate(["/recuperar"])
+  }
 }

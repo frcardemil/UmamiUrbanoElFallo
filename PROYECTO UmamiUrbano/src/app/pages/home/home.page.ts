@@ -13,8 +13,8 @@ export class HomePage {
   data:any;
   private animation!: Animation;
   constructor(private activateRoute: ActivatedRoute, private router: Router, private animationController:AnimationController) {
-    this.activateRoute.queryParams.subscribe(params=>{
-      if(this.router.getCurrentNavigation()?.extras.state){
+    this.activateRoute.queryParams.subscribe(params =>{
+      if(this.router.getCurrentNavigation()?.extras.state) {
         this.data=this.router.getCurrentNavigation()?.extras.state?.["user"];
         console.log(this.data)
       }else{

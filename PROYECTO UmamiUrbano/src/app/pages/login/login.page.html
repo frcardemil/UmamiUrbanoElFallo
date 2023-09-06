@@ -4,26 +4,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="login_img" src="https://cdn-icons-png.flaticon.com/512/5509/5509636.png" />
-    <ion-card-header>
-      <ion-card-title>Inicio de sesión</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      
-      <ion-button id="open-loading" expand="block">Iniciar sesión</ion-button>
-      <ion-loading trigger="open-loading" message="Iniciando" [duration]="3000" spinner="circles"></ion-loading>
-      <ion-button exapand="block" fill="clear">Registrarse</ion-button>
-    </ion-card-content>
-  </ion-card>
+<ion-content [fullscreen]="true" class="prueba">
+
+
+  <div class="card">
+    <ion-card>
+      <img alt="login_img" src="https://cdn-icons-png.flaticon.com/512/5509/5509636.png" />
+      <ion-card-header>
+        <ion-card-title>Inicio de sesión</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        
+        <ion-button id="open-loading" expand="block" (click)="ingresar()">Iniciar sesión</ion-button>
+        <ion-loading trigger="open-loading" message="Iniciando" [duration]="3000" spinner="circles"></ion-loading>
+        <ion-button exapand="block" fill="clear" (click)="registro()">Registrarse</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
