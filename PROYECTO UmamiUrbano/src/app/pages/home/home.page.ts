@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, IonCard } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
+import { Idatos } from 'src/app/interfaces/idatos';
+import { LocalbdService } from 'src/app/services/localbd.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,13 @@ import type { Animation } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  agenda : Idatos[]=[];
+  nombre!:string;
+  nro!:number;
 
   user:any;
   private animation!: Animation;
-  constructor(private activateRoute: ActivatedRoute, private router: Router, private animationController:AnimationController) {
+  constructor(private activateRoute: ActivatedRoute, private router: Router, private animationController:AnimationController, public localbdservice:LocalbdService) {
     this.activateRoute.queryParams.subscribe(params =>{
       if(this.router.getCurrentNavigation()?.extras.state) {
         this.user=this.router.getCurrentNavigation()?.extras.state?.["user"];
@@ -21,6 +26,15 @@ export class HomePage {
         this.router.navigate(["/login"]);
       }
     });
+  }
+  guardar(){
+    this.localbdservice.guardarContacto(this.nombre, this.nro);
+  }
+  borrarContacto(){
+    this.localbdservice.borrarContacto(this.nro);
+  }
+  borrarBD(){
+    this.localbdservice.borrarBD();
   }
   @ViewChild('animar1', {read: ElementRef, static: true})
   animar1!: ElementRef;

@@ -26,5 +26,29 @@
     <ion-button fill="clear">Configuración</ion-button>
     <ion-button fill="clear">Ver restaurantes</ion-button>
     <ion-button fill="clear">Ingresar opinión</ion-button>
+
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [clearInput]="true"[(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Numero</ion-label>
+      <ion-input type="number" [clearInput]="true"[(ngModel)]="nro"></ion-input>
+    </ion-item>
+    <ion-button shape="block" (click)="guardar()">Guardar Contacto</ion-button>
+    <ion-button shape="block" (click)="borrarContacto()">Borrar Contacto</ion-button>
+    <ion-button shape="block" (click)="borrarBD()">Borrar BD</ion-button>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let item of items; let index">
+        <ion-avatar slot="start">
+          <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
+        </ion-avatar>
+        <ion-label>{{ item }}</ion-label>
+      </ion-item>
+    </ion-list>
   </ion-card>
 </ion-content>
