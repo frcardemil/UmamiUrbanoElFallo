@@ -23,9 +23,11 @@ export class LoginPage implements OnInit {
   }
 
   ingresar(){
-    console.log(this.user)
     if (this.validateModel(this.user)) {
       this.presentToast("top", "Bienvenido "+this.user.usuario);
+      
+      localStorage.setItem('ingresado', 'true');
+
       let navigationextras: NavigationExtras={
       state:{
         user: this.user
