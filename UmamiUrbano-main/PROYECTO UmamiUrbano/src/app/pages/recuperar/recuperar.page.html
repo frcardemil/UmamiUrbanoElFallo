@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>UmamiUrbano</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondouno">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+      <ion-card-subtitle>Por favor ingrese sus datos: </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nombre completo</ion-label>
+          <ion-input type="text" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Fecha Nacimiento</ion-label>
+          <ion-input type="date"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" [clearInput]="true" helperText="Enter"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [clearInput]="true"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Confirme su contraseña</ion-label>
+          <ion-input type="password" [clearInput]="true"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="login()">Registrarse</ion-button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
